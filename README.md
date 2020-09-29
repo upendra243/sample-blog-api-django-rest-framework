@@ -38,5 +38,5 @@ python manage.py runserver
 Now test API using browser at [localhost](http://localhost:8000/) or
 import postman collection `blog.postman_collection.json` on your machine.
 
-## TODO
-- Comprehensive API Docs
+## API DOCS
+API docs generated using Swagger `/docs/` is url for docs.
