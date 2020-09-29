@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework import permissions, viewsets
 from rest_framework.views import APIView
 from rest_framework.mixins import RetrieveModelMixin
@@ -7,6 +8,9 @@ from api.permissions import IsOwnerOrReadOnly
 from api.serializers import ArticleSerializer
 
 # Create your views here.
+
+def home(request):
+    return render(request, 'home.html')
 
 
 class ArticleViewSet(viewsets.ModelViewSet):
