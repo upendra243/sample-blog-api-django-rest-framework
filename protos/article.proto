@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package article;
+
+import "google/protobuf/empty.proto";
+
+service ArticleController {
+    rpc List(ArticleListRequest) returns (stream Article) {}
+    rpc Create(Article) returns (Article) {}
+    rpc Retrieve(ArticleRetrieveRequest) returns (Article) {}
+    rpc Update(Article) returns (Article) {}
+    rpc Destroy(Article) returns (google.protobuf.Empty) {}
+}
+
+message Article {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    string body = 4;
+    repeated string tags = 5;
+    bool favorited = 6;
+    int32 favoritesCount = 7;
+}
+
+message ArticleListRequest {
+}
+
+message ArticleRetrieveRequest {
+    int32 id = 1;
+}
